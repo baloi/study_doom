@@ -30,6 +30,8 @@
  */
 typedef struct _link_list_ agLinkList;
 
+// TODO: There definitely has to be a list item (agListItem) 
+//       and a list(agLinkList)
 struct _link_list_ {
 
     bool                ( * is_list_empty )     ( void *self );

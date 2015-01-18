@@ -19,10 +19,6 @@
  *    Also add information on how to contact you by electronic and paper mail.
  *
  */
-
-
-
-
 #include "common.h"
 
 #ifndef __LINK_LIST_H__
@@ -32,10 +28,14 @@
  * Landon Curt Noll's calc hash.h is the basis for the definition of structs
  * and ID's igLinkList is the inspiration for code formatting
  */
-typedef struct _link_list_ agLinkList {
+typedef struct _link_list_ agLinkList;
+
+struct _link_list_ {
 
     bool                ( * is_list_empty )     ( void *self );
     int                     ( * node_count )    ( void *self );
+    int             id;
+    char            * item;
 
     void                ( * insert_after )      ( void *self, agLinkList * );
     void                ( * add_to_end )        ( void *self, agLinkList * );
@@ -44,4 +44,8 @@ typedef struct _link_list_ agLinkList {
     agLinkList *    head;
     agLinkList *    next;
     agLinkList *    prev;
-}
+};
+
+extern int agLinkList_node_count( agLinkList * );
+
+#endif

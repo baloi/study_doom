@@ -60,8 +60,8 @@ struct _link_list_ {
 
 };
 
-extern int agLinkList_node_count( agLinkList * );
-extern agListNode * agListNode_alloc( void );
-extern void agListNode_free( agListNode * );
+extern int              agLinkList_node_count( agLinkList * );
+extern agListNode *     agListNode_alloc( void );
+extern void             agListNode_free( agListNode * );
 
 #endif

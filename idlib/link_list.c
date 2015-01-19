@@ -37,9 +37,10 @@ agListNode * agListNode_alloc( void ) {
 
 void agListNode_free( agListNode * node ) {
     if( node ) {
-        if( node->item ) {
-            free( node->item );
-        }
+        // item does not need to be freed?
+        //if( node->item ) {
+        //    free( node->item );
+        //}
         free( node );
     }
 }

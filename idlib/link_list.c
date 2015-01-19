@@ -3,6 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// TODO: agListNode is really the link list and there should be an
+//      agList implementation with (first, last, push_value, pop etc..)
+//      agListNode (linked list) should have insert_before, insert_after
+//      , etc...
 //TODO: IMPLEMENT!
 int agLinkList_node_count( agLinkList * list ) {
     int             num;

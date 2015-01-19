@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//TODO: IMPLEMENT!
 int agLinkList_node_count( agLinkList * list ) {
     int             num;
     agListNode *    node;

@@ -8,7 +8,7 @@
 //      agListNode (linked list) should have insert_before, insert_after
 //      , etc...
 //TODO: IMPLEMENT!
-int agLinkList_node_count( agLinkList * list ) {
+int agListNode_num( agList * list ) {
     int             num;
     agListNode *    node;
 

@@ -73,7 +73,7 @@ private:
 ===============
 agLinkList<type>::agLinkList
 
-Node in initialized to be the head of an empty list
+Node is initialized to be the head of an empty list
 ===============
 */
 template< class type >

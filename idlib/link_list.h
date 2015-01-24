@@ -28,6 +28,8 @@
  * Landon Curt Noll's calc hash.h (HASH) and value.h (list and listelem) is 
  * the basis for the definition of structs and ID's igLinkList is the 
  * inspiration for code formatting
+ *
+ * List node is a linked list
  */
 typedef struct _list_node_ agListNode;
 
@@ -36,6 +38,11 @@ struct _list_node_ {
     int             id;
     char *          item;
 
+    void                ( * insert_after )      ( void *self, agListNode * );
+    void                ( * insert_before )     ( void *self, agListNode * );
+    void                ( * add_to_end )        ( void *self, agListNode * );
+    void                ( * add_to_front )      ( void *self, agListNode * );
+
     agListNode *    next;
     agListNode *    prev;
 
@@ -43,24 +50,19 @@ struct _list_node_ {
 
 
 
-typedef struct _link_list_ agLinkList;
+typedef struct _agList_ agList;
 
-struct _link_list_ {
+struct _agList_ {
 
     bool                ( * is_list_empty )     ( void *self );
-    int                     ( * node_count )    ( void *self );
-
-    void                ( * insert_after )      ( void *self, agListNode * );
-    void                ( * insert_before )     ( void *self, agListNode * );
-    void                ( * add_to_end )        ( void *self, agListNode * );
-    void                ( * add_to_front )      ( void *self, agListNode * );
+    int                     ( * size )    ( void *self );
 
     agListNode *    first;
     agListNode *    last;
 
 };
 
-extern int              agLinkList_node_count( agLinkList * );
+extern int              agListNode_num( agList * );
 extern agListNode *     agListNode_alloc( void );
 extern void             agListNode_free( agListNode * );
 
